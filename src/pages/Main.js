@@ -35,9 +35,11 @@ const Main = () => {
 
   return (
     <Wrapper>
-      {contests.map((contest, index) => (
-        <Card key={index} index={index} contest={contest} />
-      ))}
+      {contests.length !== 0
+        ? contests.map((contest, index) => (
+            <Card key={index} index={index} contest={contest} />
+          ))
+        : ''}
     </Wrapper>
   );
 };
