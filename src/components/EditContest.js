@@ -49,16 +49,22 @@ const EditContest = ({ initialContest, index }) => {
     if (solveString.length !== 0) newContest.solve = solveString.split(' ');
     else newContest.solve = [];
 
-    if (upsolveString.length !== 0) newContest.upsolve = upsolveString.split(' ');
+    if (upsolveString.length !== 0)
+      newContest.upsolve = upsolveString.split(' ');
     else newContest.upsolve = [];
 
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.patch(`/contest/${initialContest._id}`, newContest, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      console.log(newContest)
-      dispatch(contestsActions.updateContest({contest: response.data, index}));
+      const response = await axios.patch(
+        `/contest/${initialContest._id}`,
+        newContest,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      dispatch(
+        contestsActions.updateContest({ contest: response.data, index })
+      );
       setModal(!modal);
     } catch (error) {
       alert(error.message);

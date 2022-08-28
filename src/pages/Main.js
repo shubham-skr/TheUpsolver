@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import Card from '../components/Card';
-import {contestsActions} from '../store/reducers/contests';
+import { contestsActions } from '../store/reducers/contests';
 
 const Wrapper = styled.main`
   display: flex;

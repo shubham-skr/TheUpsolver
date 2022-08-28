@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Badge } from 'reactstrap';
-import {contestsActions} from '../store/reducers/contests';
+import { contestsActions } from '../store/reducers/contests';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import EditContest from './EditContest';
 import Note from './Note';
-
 
 const Wrapper = styled.div`
   background-color: #fff;
@@ -16,14 +15,15 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: ${props => props.bgColor};
+  background-color: ${(props) => props.bgColor};
   transition: all 0.2s linear;
-  box-shadow: rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  box-shadow: rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
   border: 3px solid black;
   border-radius: 0.5em;
 
   &:hover {
-    border-color: ${props => props.boxShadow};
+    border-color: ${(props) => props.boxShadow};
   }
 `;
 
@@ -76,7 +76,7 @@ const DeleteBtn = styled.div`
   cursor: pointer;
   color: red;
   font-size: 1.2em;
-`
+`;
 
 const Card = ({ contest, index }) => {
   const dispatch = useDispatch();
@@ -91,10 +91,13 @@ const Card = ({ contest, index }) => {
     } catch (error) {
       alert(error.message);
     }
-  }
+  };
 
   return (
-    <Wrapper bgColor={contest.done ? '#E4F6CF':'#FFE2E2'} boxShadow={contest.done? 'rgba(0, 255, 0, 0.6)':'rgba(255, 0, 0, 0.6)'}>
+    <Wrapper
+      bgColor={contest.done ? '#E4F6CF' : '#FFE2E2'}
+      boxShadow={contest.done ? 'rgba(0, 255, 0, 0.6)' : 'rgba(255, 0, 0, 0.6)'}
+    >
       <ContestName>{contest.name}</ContestName>
       <Problem>
         <Solved>
@@ -113,9 +116,11 @@ const Card = ({ contest, index }) => {
         </Upsolve>
       </Problem>
       <CardBtn>
-        <Note id={'note'+index} noteText={contest.note}/>
+        <Note id={'note' + index} noteText={contest.note} />
         <EditContest initialContest={contest} index={index} />
-        <DeleteBtn onClick={deleteContest}><i class='fa-solid fa-trash deleteBtn'></i></DeleteBtn>
+        <DeleteBtn onClick={deleteContest}>
+          <i class='fa-solid fa-trash deleteBtn'></i>
+        </DeleteBtn>
       </CardBtn>
     </Wrapper>
   );

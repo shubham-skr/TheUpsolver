@@ -16,7 +16,9 @@ const contestsSlice = createSlice({
       state[action.payload.index] = action.payload.contest;
     },
     removeContest(state, action) {
-      const newState = state.filter((contest) => contest._id !== action.payload._id);
+      const newState = state.filter(
+        (contest) => contest._id !== action.payload._id
+      );
       return newState;
     },
   },

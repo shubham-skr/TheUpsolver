@@ -23,11 +23,11 @@ const LogIn = (props) => {
 
   const emailChangeHandler = (event) => {
     setEmail(event.target.value);
-  }
+  };
 
   const passwordChangeHandler = (event) => {
     setPassword(event.target.value);
-  }
+  };
 
   const loginHandler = async () => {
     const user = { email, password };
@@ -37,18 +37,17 @@ const LogIn = (props) => {
       setModal(!modal);
       props.userLogIn();
       navigate('/main');
-    }
-    catch(error) {
+    } catch (error) {
       alert(error.message);
     }
     setEmail('');
     setPassword('');
-  }
+  };
 
   return (
     <div>
       <Button color='primary' onClick={toggle}>
-      &nbsp;Log in&nbsp;
+        &nbsp;Log in&nbsp;
       </Button>
       <Modal isOpen={modal} toggle={toggle} {...props}>
         <ModalHeader toggle={toggle}></ModalHeader>
@@ -56,11 +55,23 @@ const LogIn = (props) => {
           <Form>
             <FormGroup>
               <Label for='email'>Email</Label>
-              <Input id='email' name='email' type='email' value={email} onChange={emailChangeHandler} />
+              <Input
+                id='email'
+                name='email'
+                type='email'
+                value={email}
+                onChange={emailChangeHandler}
+              />
             </FormGroup>
             <FormGroup>
               <Label for='password'>Password</Label>
-              <Input id='password' name='password' type='password' value={password} onChange={passwordChangeHandler} />
+              <Input
+                id='password'
+                name='password'
+                type='password'
+                value={password}
+                onChange={passwordChangeHandler}
+              />
             </FormGroup>
           </Form>
         </ModalBody>
@@ -75,6 +86,6 @@ const LogIn = (props) => {
       </Modal>
     </div>
   );
-}
+};
 
 export default LogIn;

@@ -16,15 +16,8 @@ const Note = ({ id, noteText }) => {
       <NoteBtn id={id} onClick={toggle}>
         <i class='fa-solid fa-file'></i>
       </NoteBtn>
-      <Popover
-        placement='top'
-        isOpen={open}
-        target={id}
-        toggle={toggle}
-      >
-        <PopoverBody>
-          {noteText}
-        </PopoverBody>
+      <Popover placement='top' isOpen={open} target={id} toggle={toggle}>
+        <PopoverBody>{noteText}</PopoverBody>
       </Popover>
     </div>
   );

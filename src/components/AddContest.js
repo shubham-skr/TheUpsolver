@@ -43,7 +43,8 @@ const AddContest = (props) => {
     if (solveString.length !== 0) newContest.solve = solveString.split(' ');
     else newContest.solve = [];
 
-    if (upsolveString.length !== 0) newContest.upsolve = upsolveString.split(' ');
+    if (upsolveString.length !== 0)
+      newContest.upsolve = upsolveString.split(' ');
     else newContest.upsolve = [];
 
     const token = localStorage.getItem('token');

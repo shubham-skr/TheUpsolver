@@ -24,32 +24,31 @@ const SignUp = (props) => {
 
   const nameChangeHandler = (event) => {
     setName(event.target.value);
-  }
+  };
 
   const emailChangeHandler = (event) => {
     setEmail(event.target.value);
-  }
+  };
 
   const passwordChangeHandler = (event) => {
     setPassword(event.target.value);
-  }
+  };
 
   const signupHandler = async () => {
-    const user = {name, email, password };
+    const user = { name, email, password };
     try {
       const response = await axios.post('/auth/signup', user);
       localStorage.setItem('token', response.data.token);
       setModal(!modal);
       props.userLogIn();
       navigate('/main');
-    }
-    catch(error) {
+    } catch (error) {
       alert(error.message);
     }
     setName('');
     setEmail('');
     setPassword('');
-  }
+  };
 
   return (
     <div>
@@ -60,17 +59,34 @@ const SignUp = (props) => {
         <ModalHeader toggle={toggle}></ModalHeader>
         <ModalBody>
           <Form>
-          <FormGroup>
+            <FormGroup>
               <Label for='name'>Name</Label>
-              <Input id='name' name='name' value={name} onChange={nameChangeHandler} />
+              <Input
+                id='name'
+                name='name'
+                value={name}
+                onChange={nameChangeHandler}
+              />
             </FormGroup>
             <FormGroup>
               <Label for='email'>Email</Label>
-              <Input id='email' name='email' type='email' value={email} onChange={emailChangeHandler} />
+              <Input
+                id='email'
+                name='email'
+                type='email'
+                value={email}
+                onChange={emailChangeHandler}
+              />
             </FormGroup>
             <FormGroup>
               <Label for='password'>Password</Label>
-              <Input id='password' name='password' type='password' value={password} onChange={passwordChangeHandler} />
+              <Input
+                id='password'
+                name='password'
+                type='password'
+                value={password}
+                onChange={passwordChangeHandler}
+              />
             </FormGroup>
           </Form>
         </ModalBody>
@@ -85,6 +101,6 @@ const SignUp = (props) => {
       </Modal>
     </div>
   );
-}
+};
 
 export default SignUp;

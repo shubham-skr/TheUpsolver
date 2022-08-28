@@ -7,18 +7,16 @@ import { useEffect, useState } from 'react';
 
 function App() {
   useEffect(() => {
-    const token = localStorage.getItem('token')
-    if (token)
-      setIsLoggedIn(true);
-    else 
-      setIsLoggedIn(false);
-  }, [])
-  
+    const token = localStorage.getItem('token');
+    if (token) setIsLoggedIn(true);
+    else setIsLoggedIn(false);
+  }, []);
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const userLogIn = () => {
     setIsLoggedIn(!isLoggedIn);
-  }
+  };
 
   return (
     <div className='App'>
