@@ -21,6 +21,7 @@ const Main = () => {
         const response = await axios.get('/contest?createdOn', {
           headers: { Authorization: `Bearer ${token}` },
         });
+        console.log("response", response);
         dispatch(contestsActions.setContests(response.data));
       } catch (error) {
         alert(error.message);
@@ -32,9 +33,10 @@ const Main = () => {
 
   const dispatch = useDispatch();
   const contests = useSelector((state) => state.contests);
-
+  console.log("contest", contests);
   return (
     <Wrapper>
+      <p>sss</p>
       {contests.length !== 0
         ? contests.map((contest, index) => (
             <Card key={index} index={index} contest={contest} />
