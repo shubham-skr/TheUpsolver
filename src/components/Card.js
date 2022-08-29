@@ -84,7 +84,7 @@ const Card = ({ contest, index }) => {
   const deleteContest = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`/contest/${contest._id}`, {
+      await axios.delete(`https://skr-upsolve-api.herokuapp.com/contest/${contest._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       dispatch(contestsActions.removeContest(contest));

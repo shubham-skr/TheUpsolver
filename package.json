@@ -1,5 +1,4 @@
 {
-  "proxy": "https://skr-upsolve-api.herokuapp.com",
   "name": "the-upsolver",
   "version": "0.1.0",
   "private": true,

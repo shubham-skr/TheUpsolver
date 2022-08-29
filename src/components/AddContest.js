@@ -49,7 +49,7 @@ const AddContest = (props) => {
 
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.post('/contest', newContest, {
+      const response = await axios.post('https://skr-upsolve-api.herokuapp.com/contest', newContest, {
         headers: { Authorization: `Bearer ${token}` },
       });
       dispatch(contestsActions.addContest(response.data));

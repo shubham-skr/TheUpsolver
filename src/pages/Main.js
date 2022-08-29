@@ -18,10 +18,12 @@ const Main = () => {
     const getContests = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('/contest?createdOn', {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        console.log("response", response);
+        const response = await axios.get(
+          'https://skr-upsolve-api.herokuapp.com/contest?createdOn',
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
         dispatch(contestsActions.setContests(response.data));
       } catch (error) {
         alert(error.message);
@@ -33,10 +35,9 @@ const Main = () => {
 
   const dispatch = useDispatch();
   const contests = useSelector((state) => state.contests);
-  console.log("contest", contests);
+
   return (
     <Wrapper>
-      <p>sss</p>
       {contests.length !== 0
         ? contests.map((contest, index) => (
             <Card key={index} index={index} contest={contest} />
