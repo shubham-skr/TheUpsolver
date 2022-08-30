@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 <br />
 
-### <a href="https://the-upsolver.netlify.app/">LIVE APP</a>
+### <a href="https://the-upsolver-8b63b.web.app/">LIVE APP</a>
 ### <a href="https://github.com/shubham-skr/upsolve-api">Backend Github Repository</a>
 
 <br />
