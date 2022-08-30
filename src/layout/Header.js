@@ -15,7 +15,7 @@ const Wrapper = styled.header`
 
   @media only screen and (max-width: 500px) {
     flex-direction: column;
-    row-gap: 1.5em;
+    row-gap: 1em;
   }
 
 `;
@@ -23,7 +23,8 @@ const Wrapper = styled.header`
 const Title = styled.div`
   font-size: 1.8em;
   font-weight: 700;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
 `;
 
 const HeaderBtn = styled.div`
