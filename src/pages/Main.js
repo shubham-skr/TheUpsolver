@@ -19,7 +19,7 @@ const Main = () => {
       try {
         const token = localStorage.getItem('token');
         const response = await axios.get(
-          'https://skr-upsolve-api.herokuapp.com/contest?createdOn',
+          `${process.env.REACT_APP_BACKEND_URL}/contest?createdOn`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

@@ -56,7 +56,7 @@ const EditContest = ({ initialContest, index }) => {
     const token = localStorage.getItem('token');
     try {
       const response = await axios.patch(
-        `https://skr-upsolve-api.herokuapp.com/contest/${initialContest._id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/contest/${initialContest._id}`,
         newContest,
         {
           headers: { Authorization: `Bearer ${token}` },

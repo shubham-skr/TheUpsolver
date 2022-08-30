@@ -35,6 +35,11 @@ const ContestName = styled.div`
   height: 80px;
   text-transform: capitalize;
   overflow: hidden;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 
 const Problem = styled.div`
@@ -84,9 +89,12 @@ const Card = ({ contest, index }) => {
   const deleteContest = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`https://skr-upsolve-api.herokuapp.com/contest/${contest._id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.delete(
+        `${process.env.REACT_APP_BACKEND_URL}/contest/${contest._id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       dispatch(contestsActions.removeContest(contest));
     } catch (error) {
       alert(error.message);
@@ -98,7 +106,11 @@ const Card = ({ contest, index }) => {
       bgColor={contest.done ? '#E4F6CF' : '#FFE2E2'}
       boxShadow={contest.done ? 'rgba(0, 255, 0, 0.6)' : 'rgba(255, 0, 0, 0.6)'}
     >
-      <ContestName>{contest.name}</ContestName>
+      <ContestName>
+        <a href={contest.url} target='_blank' rel="noreferrer">
+          {contest.name}
+        </a>
+      </ContestName>
       <Problem>
         <Solved>
           {contest.solve.map((rating, index) => (

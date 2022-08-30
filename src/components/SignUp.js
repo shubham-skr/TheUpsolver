@@ -37,7 +37,7 @@ const SignUp = (props) => {
   const signupHandler = async () => {
     const user = { name, email, password };
     try {
-      const response = await axios.post('https://skr-upsolve-api.herokuapp.com/auth/signup', user);
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/auth/signup`, user);
       localStorage.setItem('token', response.data.token);
       setModal(!modal);
       props.userLogIn();

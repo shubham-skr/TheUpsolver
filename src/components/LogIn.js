@@ -32,7 +32,7 @@ const LogIn = (props) => {
   const loginHandler = async () => {
     const user = { email, password };
     try {
-      const response = await axios.post('https://skr-upsolve-api.herokuapp.com/auth/login', user);
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, user);
       localStorage.setItem('token', response.data.token);
       setModal(!modal);
       props.userLogIn();
