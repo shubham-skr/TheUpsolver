@@ -8,6 +8,7 @@ import { contestsActions } from '../store/reducers/contests';
 const Wrapper = styled.main`
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: 2em;
   flex-wrap: wrap;
   padding-top: 2em;

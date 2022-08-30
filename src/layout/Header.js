@@ -11,12 +11,19 @@ const Wrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 1em 2em;
-  background-color: #eaeff2;
+  background-color: #fff;
+
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+    row-gap: 1.5em;
+  }
+
 `;
 
 const Title = styled.div`
   font-size: 1.8em;
   font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 `;
 
 const HeaderBtn = styled.div`
