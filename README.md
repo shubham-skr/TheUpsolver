@@ -1,10 +1,16 @@
-# Getting Started with Create React App
+# Getting Started with The Upsolver
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 <br />
 
 ### <a href="https://the-upsolver-8b63b.web.app/">LIVE APP</a>
 ### <a href="https://github.com/shubham-skr/upsolve-api">Backend Github Repository</a>
+
+<br />
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/79463685/187495409-7b3dd5f7-9c22-4b5c-a8d0-7cef755006a4.png">
+
+
 
 <br />
 
