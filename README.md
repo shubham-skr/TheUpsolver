@@ -1,7 +1,11 @@
 # Getting Started with The Upsolver
+#### node.js, express.js, react.js, redux, reactstrap, mongodb
+<br/>
 Designed and developed a web-based application to help users manage coding contests for up-solving, and easily track unsolved problems during the contest.
 <br/>
+
 ### <a href="https://the-upsolver-8b63b.web.app/">LIVE APP</a>
+
 <br/>
 Created REST API to perform CRUD operations, and implemented authentication, filtering, sorting, pagination, email-sending, and file upload functionalities.
 <br />
