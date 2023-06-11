@@ -1,9 +1,13 @@
 # Getting Started with The Upsolver
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 <br />
+Designed and developed a web-based application to help users manage coding contests for up-solving, and easily track unsolved problems during the contest.
+<br/>
 
 ### <a href="https://the-upsolver-8b63b.web.app/">LIVE APP</a>
+<br />
+Created REST API to perform CRUD operations, and implemented authentication, filtering, sorting, pagination, email-sending, and file upload functionalities.
+<br />
+
 ### <a href="https://github.com/shubham-skr/upsolve-api">Backend Github Repository</a>
 
 <br />
@@ -11,8 +15,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/79463685/187495409-7b3dd5f7-9c22-4b5c-a8d0-7cef755006a4.png">
 
 
-
 <br />
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
